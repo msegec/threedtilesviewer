@@ -9,4 +9,4 @@ Util::addStyle(OCA\ThreeDTilesViewer\AppInfo\Application::APP_ID, OCA\ThreeDTile
 
 ?>
 
-<div id="threedtilesviewer"></div>
+<div id="ThreeDTilesViewer"></div>

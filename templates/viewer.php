@@ -10,8 +10,8 @@
 use OCP\Util;
 
 // Add required scripts and styles
-Util::addScript('3d_tiles_viewer', 'viewer');
-Util::addStyle('3d_tiles_viewer', 'viewer');
+Util::addScript('ThreeDTilesViewer', 'viewer');
+Util::addStyle('ThreeDTilesViewer', 'viewer');
 ?>
 
 <div id="3d-tiles-viewer" class="nc-3d-tiles-viewer">
@@ -234,7 +234,7 @@ Util::addStyle('3d_tiles_viewer', 'viewer');
 
 <script>
 // Nextcloud integration variables
-window.NC_3D_TILES_VIEWER = {
+window.NC_THREE_D_TILES_VIEWER = {
     appName: '<?php p($appName); ?>',
     userId: '<?php p($userId ?? ''); ?>',
     fileId: '<?php p($fileId ?? ''); ?>',

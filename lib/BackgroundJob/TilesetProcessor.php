@@ -40,10 +40,10 @@ class TilesetProcessor extends Job implements IJob {
 		try {
 			// This is a placeholder for future background processing
 			// Currently, tileset processing is done on-demand
-			$this->logger->info('3D Tiles Viewer: Background job executed', ['app' => 'threedtilesviewer']);
+			$this->logger->info('3D Tiles Viewer: Background job executed', ['app' => 'ThreeDTilesViewer']);
 		} catch (Exception $e) {
 			$this->logger->error('3D Tiles Viewer: Background job failed', [
-				'app' => 'threedtilesviewer',
+				'app' => 'ThreeDTilesViewer',
 				'exception' => $e->getMessage()
 			]);
 		}

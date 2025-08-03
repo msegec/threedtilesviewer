@@ -1,5 +1,5 @@
 {
-  "name": "threedtilesviewer",
+  "name": "ThreeDTilesViewer",
   "version": "1.0.0",
   "description": "3D Tiles Viewer for Nextcloud",
   "main": "js/viewer.js",

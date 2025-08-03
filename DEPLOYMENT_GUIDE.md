@@ -39,8 +39,8 @@ composer --version
 
 ```bash
 # Clone or download the app
-git clone https://github.com/msegec/nc-3dtiles-vwr.git
-cd nc-3dtiles-vwr
+git clone https://github.com/msegec/ThreeDTilesViewer.git
+cd ThreeDTilesViewer
 
 # Install dependencies
 composer install --no-dev --optimize-autoloader
@@ -61,15 +61,15 @@ ls -la css/
 cd /path/to/your/nextcloud/apps
 
 # Copy the app (rename to match Nextcloud conventions)
-cp -r /path/to/nc-3dtiles-vwr 3d_tiles_viewer
+cp -r /path/to/ThreeDTilesViewer ThreeDTilesViewer
 
 # Set correct ownership (replace www-data with your web server user)
-sudo chown -R www-data:www-data 3d_tiles_viewer
+sudo chown -R www-data:www-data ThreeDTilesViewer
 
 # Set correct permissions
-sudo chmod -R 755 3d_tiles_viewer
-sudo chmod -R 644 3d_tiles_viewer/appinfo/*.xml
-sudo chmod -R 644 3d_tiles_viewer/appinfo/*.php
+sudo chmod -R 755 ThreeDTilesViewer
+sudo chmod -R 644 ThreeDTilesViewer/appinfo/*.xml
+sudo chmod -R 644 ThreeDTilesViewer/appinfo/*.php
 ```
 
 ### Step 3: Clear Nextcloud Cache
@@ -88,10 +88,10 @@ php occ cache:clear
 
 ```bash
 # Enable via CLI (recommended)
-php occ app:enable 3d_tiles_viewer
+php occ app:enable ThreeDTilesViewer
 
 # Verify installation
-php occ app:list | grep 3d_tiles_viewer
+php occ app:list | grep ThreeDTilesViewer
 ```
 
 ## 🔧 Method 2: Manual Installation with Troubleshooting
@@ -102,7 +102,7 @@ Ensure your app has all required files:
 
 ```bash
 # Required directory structure
-nc-3dtiles-vwr/
+ThreeDTilesViewer/
 ├── appinfo/
 │   ├── info.xml          # ✅ Must exist
 │   ├── navigation.php    # ✅ Must exist
@@ -127,16 +127,16 @@ nc-3dtiles-vwr/
 
 ```bash
 # Set proper ownership
-sudo chown -R www-data:www-data /path/to/nextcloud/apps/3d_tiles_viewer
+sudo chown -R www-data:www-data /path/to/nextcloud/apps/ThreeDTilesViewer
 
 # Set directory permissions
-sudo find /path/to/nextcloud/apps/3d_tiles_viewer -type d -exec chmod 755 {} \;
+sudo find /path/to/nextcloud/apps/ThreeDTilesViewer -type d -exec chmod 755 {} \;
 
 # Set file permissions
-sudo find /path/to/nextcloud/apps/3d_tiles_viewer -type f -exec chmod 644 {} \;
+sudo find /path/to/nextcloud/apps/ThreeDTilesViewer -type f -exec chmod 644 {} \;
 
 # Make scripts executable
-sudo chmod +x /path/to/nextcloud/apps/3d_tiles_viewer/setup.sh
+sudo chmod +x /path/to/nextcloud/apps/ThreeDTilesViewer/setup.sh
 ```
 
 ### Step 3: Verify Nextcloud Configuration
@@ -171,14 +171,14 @@ sudo rm -rf /path/to/nextcloud/data/tmp/*
 
 ```bash
 # Create fresh app directory
-sudo mkdir -p /path/to/nextcloud/apps/3d_tiles_viewer
+sudo mkdir -p /path/to/nextcloud/apps/ThreeDTilesViewer
 
 # Copy app files
-sudo cp -r /path/to/nc-3dtiles-vwr/* /path/to/nextcloud/apps/3d_tiles_viewer/
+sudo cp -r /path/to/ThreeDTilesViewer/* /path/to/nextcloud/apps/ThreeDTilesViewer/
 
 # Set permissions
-sudo chown -R www-data:www-data /path/to/nextcloud/apps/3d_tiles_viewer
-sudo chmod -R 755 /path/to/nextcloud/apps/3d_tiles_viewer
+sudo chown -R www-data:www-data /path/to/nextcloud/apps/ThreeDTilesViewer
+sudo chmod -R 755 /path/to/nextcloud/apps/ThreeDTilesViewer
 ```
 
 ### Step 3: Restart Services
@@ -202,10 +202,10 @@ php occ files:scan --all
 **Solutions**:
 ```bash
 # Check app directory exists
-ls -la /path/to/nextcloud/apps/3d_tiles_viewer
+ls -la /path/to/nextcloud/apps/ThreeDTilesViewer
 
 # Check appinfo files
-ls -la /path/to/nextcloud/apps/3d_tiles_viewer/appinfo/
+ls -la /path/to/nextcloud/apps/ThreeDTilesViewer/appinfo/
 
 # Clear app cache
 php occ app:update --all
@@ -225,7 +225,7 @@ php occ status
 php --version
 
 # Verify app requirements in info.xml
-cat /path/to/nextcloud/apps/3d_tiles_viewer/appinfo/info.xml
+cat /path/to/nextcloud/apps/ThreeDTilesViewer/appinfo/info.xml
 ```
 
 ### Issue 3: Permission Denied Errors
@@ -235,11 +235,11 @@ cat /path/to/nextcloud/apps/3d_tiles_viewer/appinfo/info.xml
 **Solutions**:
 ```bash
 # Fix ownership
-sudo chown -R www-data:www-data /path/to/nextcloud/apps/3d_tiles_viewer
+sudo chown -R www-data:www-data /path/to/nextcloud/apps/ThreeDTilesViewer
 
 # Fix permissions
-sudo chmod -R 755 /path/to/nextcloud/apps/3d_tiles_viewer
-sudo chmod -R 644 /path/to/nextcloud/apps/3d_tiles_viewer/appinfo/*.xml
+sudo chmod -R 755 /path/to/nextcloud/apps/ThreeDTilesViewer
+sudo chmod -R 644 /path/to/nextcloud/apps/ThreeDTilesViewer/appinfo/*.xml
 
 # Check web server user
 ps aux | grep apache  # or nginx
@@ -252,7 +252,7 @@ ps aux | grep apache  # or nginx
 **Solutions**:
 ```bash
 # Rebuild assets
-cd /path/to/nextcloud/apps/3d_tiles_viewer
+cd /path/to/nextcloud/apps/ThreeDTilesViewer
 npm install
 npm run build
 
@@ -328,16 +328,16 @@ Useful commands for troubleshooting:
 
 ```bash
 # Check app status
-php occ app:list | grep 3d_tiles_viewer
+php occ app:list | grep ThreeDTilesViewer
 
 # Check app info
-php occ app:info 3d_tiles_viewer
+php occ app:info ThreeDTilesViewer
 
 # Check logs
-php occ log:list | grep 3d_tiles_viewer
+php occ log:list | grep ThreeDTilesViewer
 
 # Check file permissions
-ls -la /path/to/nextcloud/apps/3d_tiles_viewer/
+ls -la /path/to/nextcloud/apps/ThreeDTilesViewer/
 
 # Check web server logs
 sudo tail -f /var/log/apache2/error.log  # or nginx
@@ -347,7 +347,7 @@ sudo tail -f /var/log/apache2/error.log  # or nginx
 
 Your deployment is successful when:
 
-1. **CLI Verification**: `php occ app:list` shows `3d_tiles_viewer` as enabled
+1. **CLI Verification**: `php occ app:list` shows `ThreeDTilesViewer` as enabled
 2. **Web Interface**: App appears in Admin → Apps as enabled
 3. **Navigation**: App appears in Nextcloud navigation menu
 4. **Functionality**: Clicking tileset.json files opens the 3D viewer
@@ -367,8 +367,8 @@ echo "🚀 Deploying 3D Tiles Viewer to Nextcloud..."
 
 # Variables
 NEXTCLOUD_PATH="/path/to/your/nextcloud"
-APP_SOURCE="/path/to/nc-3dtiles-vwr"
-APP_DEST="$NEXTCLOUD_PATH/apps/3d_tiles_viewer"
+APP_SOURCE="/path/to/ThreeDTilesViewer"
+APP_DEST="$NEXTCLOUD_PATH/apps/ThreeDTilesViewer"
 
 # Build the app
 echo "📦 Building app..."
@@ -388,7 +388,7 @@ echo "🔄 Clearing cache and enabling app..."
 cd "$NEXTCLOUD_PATH"
 php occ cache:clear
 php occ files:scan --all
-php occ app:enable 3d_tiles_viewer
+php occ app:enable ThreeDTilesViewer
 
 echo "✅ Deployment complete!"
 echo "Check Admin → Apps to verify installation"

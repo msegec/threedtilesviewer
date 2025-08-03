@@ -51,8 +51,8 @@ class ViewerController extends Controller {
 	 * @PublicPage
 	 */
 	public function index(): TemplateResponse {
-		return new TemplateResponse('threedtilesviewer', 'viewer', [
-			'appName' => 'threedtilesviewer',
+		return new TemplateResponse('ThreeDTilesViewer', 'viewer', [
+			'appName' => 'ThreeDTilesViewer',
 			'urlGenerator' => $this->urlGenerator
 		]);
 	}

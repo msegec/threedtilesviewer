@@ -15,8 +15,8 @@ use OCP\Util;
 
 	return [
 	'resources' => [
-		'threedtilesviewer' => [
-			'url' => '/apps/threedtilesviewer/',
+			'ThreeDTilesViewer' => [
+		'url' => '/apps/ThreeDTilesViewer/',
 			'icon' => 'icon-3d-tiles',
 			'name' => '3D Tiles Viewer',
 			'order' => 10,

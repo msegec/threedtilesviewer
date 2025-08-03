@@ -41,13 +41,13 @@ PLEASE NOTE: currently only tested with metashape cesium 1.1 tiles.
 
 2. **Copy to Nextcloud apps directory**:
    ```bash
-   cp -r /path/to/nc-3dtiles-vwr /var/www/nextcloud/apps/3d_tiles_viewer
+   cp -r /path/to/ThreeDTilesViewer /var/www/nextcloud/apps/ThreeDTilesViewer
    ```
 
 3. **Set permissions**:
    ```bash
-   chown -R www-data:www-data /var/www/nextcloud/apps/3d_tiles_viewer
-   chmod -R 755 /var/www/nextcloud/apps/3d_tiles_viewer
+   chown -R www-data:www-data /var/www/nextcloud/apps/ThreeDTilesViewer
+chmod -R 755 /var/www/nextcloud/apps/ThreeDTilesViewer
    ```
 
 4. **Enable the app** in Nextcloud Admin → Apps → 3D Tiles Viewer
@@ -58,16 +58,16 @@ For detailed manual installation instructions, see [INSTALLATION.md](INSTALLATIO
 
 ### Method 1: Manual Installation
 
-1. Download the latest release from the [releases page](https://github.com/msegec/nc-3dtiles-vwr/releases)
+1. Download the latest release from the [releases page](https://github.com/msegec/ThreeDTilesViewer/releases)
 2. Extract the archive to your Nextcloud `apps` directory:
    ```bash
    cd /path/to/nextcloud/apps
-   unzip nc-3dtiles-vwr.zip
+   unzip ThreeDTilesViewer.zip
    ```
-3. Rename the extracted folder to `3d_tiles_viewer`
+3. Rename the extracted folder to `ThreeDTilesViewer`
 4. Install dependencies:
    ```bash
-   cd 3d_tiles_viewer
+   cd ThreeDTilesViewer
    composer install --no-dev --optimize-autoloader
    npm install
    npm run build
@@ -78,8 +78,8 @@ For detailed manual installation instructions, see [INSTALLATION.md](INSTALLATIO
 
 ```bash
 cd /path/to/nextcloud/apps
-git clone https://github.com/msegec/nc-3dtiles-vwr.git 3d_tiles_viewer
-cd 3d_tiles_viewer
+git clone https://github.com/msegec/ThreeDTilesViewer.git ThreeDTilesViewer
+cd ThreeDTilesViewer
 ./setup.sh  # or setup.bat on Windows
 ```
 
@@ -150,8 +150,8 @@ Users can customize their viewing experience through the control panels:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/msegec/nc-3dtiles-vwr.git
-   cd nc-3dtiles-vwr
+   git clone https://github.com/msegec/ThreeDTilesViewer.git
+cd ThreeDTilesViewer
    ```
 
 2. **Install dependencies**:
@@ -167,13 +167,13 @@ Users can customize their viewing experience through the control panels:
 
 4. **Link to Nextcloud**:
    ```bash
-   ln -s /path/to/nc-3dtiles-vwr /path/to/nextcloud/apps/3d_tiles_viewer
+   ln -s /path/to/ThreeDTilesViewer /path/to/nextcloud/apps/ThreeDTilesViewer
    ```
 
 ### Project Structure
 
 ```
-nc-3dtiles-vwr/
+ThreeDTilesViewer/
 ├── appinfo/                 # App metadata and configuration
 │   ├── info.xml            # App information
 │   └── navigation.php      # Navigation integration
@@ -196,8 +196,8 @@ nc-3dtiles-vwr/
 
 The app provides the following API endpoints:
 
-- `GET /apps/3d_tiles_viewer/api/v1/tileset/{fileId}`: Get tileset information
-- `GET /apps/3d_tiles_viewer/api/v1/file/{fileId}`: Get file download URL
+- `GET /apps/ThreeDTilesViewer/api/v1/tileset/{fileId}`: Get tileset information
+- `GET /apps/ThreeDTilesViewer/api/v1/file/{fileId}`: Get file download URL
 
 ### Building for Production
 
@@ -285,9 +285,9 @@ This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE)
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/msegec/nc-3dtiles-vwr/issues)
-- **Documentation**: [Wiki](https://github.com/msegec/nc-3dtiles-vwr/wiki)
-- **Discussions**: [GitHub Discussions](https://github.com/msegec/nc-3dtiles-vwr/discussions)
+- **Issues**: [GitHub Issues](https://github.com/msegec/ThreeDTilesViewer/issues)
+- **Documentation**: [Wiki](https://github.com/msegec/ThreeDTilesViewer/wiki)
+- **Discussions**: [GitHub Discussions](https://github.com/msegec/ThreeDTilesViewer/discussions)
 
 ## Changelog
 

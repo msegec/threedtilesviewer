@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-	<id>threedtilesviewer</id>
+	<id>ThreeDTilesViewer</id>
 	<name>Three D Tiles Viewer</name>
 	<summary>View 3D Tiles files directly in Nextcloud</summary>
 	<description><![CDATA[3D Tiles Viewer for Nextcloud
@@ -25,15 +25,15 @@ Features
 	<category>multimedia</category>
 	<category>tools</category>
 	<category>viewer</category>
-	<bugs>https://github.com/msegec/nc-3dtiles-vwr/issues</bugs>
+	<bugs>https://github.com/msegec/ThreeDTilesViewer/issues</bugs>
 	<dependencies>
 		<nextcloud min-version="29" max-version="31"/>
 	</dependencies>
 	<navigations>
 		<navigation>
-			<id>threedtilesviewer</id>
+			<id>ThreeDTilesViewer</id>
 			<name>Three D Tiles Viewer</name>
-			<route>threedtilesviewer.page.index</route>
+			<route>ThreeDTilesViewer.page.index</route>
 			<icon>app.svg</icon>
 			<type>link</type>
 		</navigation>

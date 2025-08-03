@@ -1,5 +1,5 @@
 {
-	"name": "nextcloud/threedtilesviewer",
+	"name": "nextcloud/ThreeDTilesViewer",
 	"description": "<![CDATA[3D Tiles Viewer for Nextcloud
 
 A Nextcloud app that allows users to view 3D Tiles files directly within their Nextcloud instance using an interactive 3D viewer. PLEASE NOTE: currently only tested with metashape cesium 1.1 tiles.

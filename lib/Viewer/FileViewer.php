@@ -98,7 +98,7 @@ class FileViewer implements IProviderV2 {
 	 * Get the viewer URL
 	 */
 	public function getViewerUrl(Node $node): string {
-		return $this->urlGenerator->linkToRoute('3d_tiles_viewer.viewer.index', [
+		return $this->urlGenerator->linkToRoute('ThreeDTilesViewer.viewer.index', [
 			'fileId' => $node->getId()
 		]);
 	}

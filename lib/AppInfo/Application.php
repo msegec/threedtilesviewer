@@ -17,7 +17,7 @@ use OCP\Util;
 use OCA\ThreeDTilesViewer\Viewer\FileViewer;
 
 class Application extends App implements IBootstrap {
-	public const APP_ID = 'threedtilesviewer';
+	public const APP_ID = 'ThreeDTilesViewer';
 
 	public function __construct() {
 		parent::__construct(self::APP_ID);
