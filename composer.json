@@ -1,0 +1,78 @@
+{
+	"name": "nextcloud/threedtilesviewer",
+	"description": "<![CDATA[3D Tiles Viewer for Nextcloud
+
+A Nextcloud app that allows users to view 3D Tiles files directly within their Nextcloud instance using an interactive 3D viewer. PLEASE NOTE: currently only tested with metashape cesium 1.1 tiles.
+Features
+
+    File Browser Integration: Browse and select tileset.json files from your Nextcloud storage
+    Interactive 3D Viewer: Full-featured 3D viewer with camera controls, lighting, and model manipulation
+    Mobile Support: Responsive design that works on desktop and mobile devices
+    Permission Integration: Respects Nextcloud's file sharing and permission system
+    User Settings: Store viewer preferences per user
+    WGS84 Coordinate System: Support for geographic coordinate systems
+    KTX2/DRACO Support: Advanced texture and geometry compression]]>",
+	"license": "AGPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Mark Z Segec",
+			"email": "mark@dronewest.com.au",
+			"homepage": "https://dronewest.com.au"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"OCA\\ThreeDTilesViewer\\": "lib/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OCA\\ThreeDTilesViewer\\Tests\\": "tests/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"@composer bin all install --ansi"
+		],
+		"post-update-cmd": [
+			"@composer bin all update --ansi"
+		],
+		"lint": "find . -name \\*.php -not -path './vendor/*' -not -path './vendor-bin/*' -not -path './build/*' -print0 | xargs -0 -n1 php -l",
+		"cs:check": "php-cs-fixer fix --dry-run --diff",
+		"cs:fix": "php-cs-fixer fix",
+		"psalm": "psalm --threads=1 --no-cache",
+		"test:unit": "phpunit tests -c tests/phpunit.xml --colors=always --fail-on-warning --fail-on-risky",
+		"openapi": "generate-spec",
+		"rector": "rector && composer cs:fix",
+		"test": "phpunit",
+		"test:integration": "phpunit --testsuite integration",
+		"phpstan": "phpstan analyse",
+		"build": "npm run build",
+		"build:dev": "npm run build:dev"
+	},
+	"require": {
+		"bamarni/composer-bin-plugin": "^1.8",
+		"php": "^8.1",
+		"nextcloud/nextcloud": "^31.0"
+	},
+	"require-dev": {
+		"nextcloud/ocp": "dev-stable29",
+		"roave/security-advisories": "dev-latest",
+		"phpunit/phpunit": "^9.0",
+		"phpstan/phpstan": "^1.0",
+		"squizlabs/php_codesniffer": "^3.0",
+		"nextcloud/coding-standard": "^0.3.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true
+		},
+		"optimize-autoloader": true,
+		"sort-packages": true,
+		"platform": {
+			"php": "8.1"
+		}
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
