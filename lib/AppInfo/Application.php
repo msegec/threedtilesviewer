@@ -1,6 +1,6 @@
 <?php
 /**
- * 3D Tiles Viewer App for Nextcloud
+ * Three Tiles Viewer App for Nextcloud
  *
  * @author Mark Segec
  * @copyright 2025 Mark Segec and the respective contributors

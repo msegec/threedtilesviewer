@@ -10,8 +10,8 @@
 return [
 	'routes' => [
 		// Viewer routes
-		['name' => 'viewer#index', 'url' => '/', 'verb' => 'GET'],
-		['name' => 'viewer#getTilesetInfo', 'url' => '/tileset/{fileId}', 'verb' => 'GET'],
-		['name' => 'viewer#getFileUrl', 'url' => '/file/{fileId}', 'verb' => 'GET'],
+		['name' => 'ThreeDTilesViewer#index', 'url' => '/', 'verb' => 'GET'],
+		['name' => 'ThreeDTilesViewer#getTilesetInfo', 'url' => '/tileset/{fileId}', 'verb' => 'GET'],
+		['name' => 'ThreeDTilesViewer#getFileUrl', 'url' => '/file/{fileId}', 'verb' => 'GET'],
 	]
 ]; 

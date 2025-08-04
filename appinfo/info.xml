@@ -2,15 +2,15 @@
 <info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>ThreeDTilesViewer</id>
-	<name>Three D Tiles Viewer</name>
-	<summary>View 3D Tiles files directly in Nextcloud</summary>
-	<description><![CDATA[3D Tiles Viewer for Nextcloud
+	<name>ThreeDTilesViewer</name>
+	<summary>View Three Tiles files directly in Nextcloud</summary>
+	<description><![CDATA[Three Tiles Viewer for Nextcloud
 
-A Nextcloud app that allows users to view 3D Tiles files directly within their Nextcloud instance using an interactive 3D viewer. PLEASE NOTE: currently only tested with metashape cesium 1.1 tiles.
+A Nextcloud app that allows users to view Three Tiles files directly within their Nextcloud instance using an interactive three viewer. PLEASE NOTE: currently only tested with metashape cesium one.one tiles.
 Features
 
     File Browser Integration: Browse and select tileset.json files from your Nextcloud storage
-    Interactive 3D Viewer: Full-featured 3D viewer with camera controls, lighting, and model manipulation
+    Interactive Three Viewer: Full-featured three viewer with camera controls, lighting, and model manipulation
     Mobile Support: Responsive design that works on desktop and mobile devices
     Permission Integration: Respects Nextcloud's file sharing and permission system
     User Settings: Store viewer preferences per user
@@ -25,14 +25,14 @@ Features
 	<category>multimedia</category>
 	<category>tools</category>
 	<category>viewer</category>
-	<bugs>https://github.com/msegec/ThreeDTilesViewer/issues</bugs>
+	<bugs>https://github.com/msegec/ThreeTilesViewer/issues</bugs>
 	<dependencies>
 		<nextcloud min-version="29" max-version="31"/>
 	</dependencies>
 	<navigations>
 		<navigation>
 			<id>ThreeDTilesViewer</id>
-			<name>Three D Tiles Viewer</name>
+			<name>ThreeDTilesViewer</name>
 			<route>ThreeDTilesViewer.page.index</route>
 			<icon>app.svg</icon>
 			<type>link</type>

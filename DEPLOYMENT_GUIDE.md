@@ -11,6 +11,67 @@ This guide provides multiple methods to deploy the 3D Tiles Viewer app to Nextcl
 3. **Cache Problems**: Nextcloud cache not cleared after installation
 4. **Version Conflicts**: Incompatible Nextcloud or PHP versions
 5. **Missing Files**: Incomplete app structure or missing critical files
+6. **App Name Corruption**: Case sensitivity issues or corrupted app names during installation
+
+### Issue 6: "Could not download app" Error
+
+**Symptoms**: Nextcloud shows "Could not download app [corrupted-name]" error
+
+**Root Cause**: App name corruption, case sensitivity issues, or incomplete installation
+
+**Solutions**:
+
+```bash
+# Step 1: Remove any existing corrupted installation
+sudo rm -rf /path/to/nextcloud/apps/ThreeDTilesViewer
+sudo rm -rf /path/to/nextcloud/apps/threedtilesviewer
+sudo rm -rf /path/to/nextcloud/apps/hreeilesiewer
+
+# Step 2: Clear all caches
+cd /path/to/nextcloud
+php occ cache:clear
+php occ files:scan --all
+php occ app:update --all
+
+# Step 3: Verify app directory structure
+ls -la /path/to/nextcloud/apps/
+
+# Step 4: Reinstall with correct case sensitivity
+sudo cp -r /path/to/ThreeDTilesViewer /path/to/nextcloud/apps/ThreeDTilesViewer
+sudo chown -R www-data:www-data /path/to/nextcloud/apps/ThreeDTilesViewer
+sudo chmod -R 755 /path/to/nextcloud/apps/ThreeDTilesViewer
+
+# Step 5: Verify appinfo files exist
+ls -la /path/to/nextcloud/apps/ThreeDTilesViewer/appinfo/
+cat /path/to/nextcloud/apps/ThreeDTilesViewer/appinfo/info.xml
+
+# Step 6: Enable via CLI
+php occ app:enable ThreeDTilesViewer
+
+# Step 7: Verify installation
+php occ app:list | grep ThreeDTilesViewer
+```
+
+**Alternative Method - Complete Reset**:
+
+```bash
+# Stop web server
+sudo systemctl stop apache2  # or nginx
+
+# Backup and clear apps directory
+sudo cp -r /path/to/nextcloud/apps /path/to/nextcloud/apps.backup
+sudo rm -rf /path/to/nextcloud/apps/*
+
+# Clear all caches
+sudo rm -rf /path/to/nextcloud/data/cache/*
+sudo rm -rf /path/to/nextcloud/data/tmp/*
+
+# Reinstall core apps (if needed)
+# Then install ThreeDTilesViewer
+
+# Restart web server
+sudo systemctl start apache2  # or nginx
+```
 
 ## 📋 Prerequisites Check
 
@@ -380,8 +441,8 @@ npm run build
 # Deploy to Nextcloud
 echo "📁 Deploying to Nextcloud..."
 sudo cp -r "$APP_SOURCE" "$APP_DEST"
-sudo chown -R www-data:www-data "$APP_DEST"
-sudo chmod -R 755 "$APP_DEST"
+sudo chown -R www-data:www-data "/var/www/html/apps/ThreeDTilesViewer"
+sudo chmod -R 755 "/var/www/html/apps/ThreeDTilesViewer"
 
 # Clear cache and enable
 echo "🔄 Clearing cache and enabling app..."

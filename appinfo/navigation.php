@@ -1,6 +1,6 @@
 <?php
 /**
- * 3D Tiles Viewer App for Nextcloud
+ * Three Tiles Viewer App for Nextcloud
  *
  * @author Mark Segec
  * @copyright 2025 Mark Segec and the respective contributors
@@ -17,8 +17,8 @@ use OCP\Util;
 	'resources' => [
 			'ThreeDTilesViewer' => [
 		'url' => '/apps/ThreeDTilesViewer/',
-			'icon' => 'icon-3d-tiles',
-			'name' => '3D Tiles Viewer',
+			'icon' => 'icon-three-tiles',
+			'name' => 'ThreeDTilesViewer',
 			'order' => 10,
 		],
 	],
