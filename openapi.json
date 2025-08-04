@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.3",
     "info": {
-        "title": "threedtilesviewer",
+        	"title": "ThreeDTilesViewer",
         "version": "0.0.1",
         "description": "View 3D Tiles files directly in Nextcloud",
         "license": {
@@ -47,7 +47,7 @@
         }
     },
     "paths": {
-        "/ocs/v2.php/apps/threedtilesviewer/api": {
+        		"/ocs/v2.php/apps/ThreeDTilesViewer/api": {
             "get": {
                 "operationId": "api-index",
                 "summary": "An example API endpoint",
